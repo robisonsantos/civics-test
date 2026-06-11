@@ -64,11 +64,11 @@
       <div class="relative">
         {#key currentIdx}
           <div in:fade={{duration: 200}} class="transition-all">
-            <QuestionCard 
-              question={module.questions[currentIdx]} 
-              streak={streak} 
-              onNext={handleNext} 
-              onGoDeeper={handleGoD halftone={handleGoDeeper}} 
+            <QuestionCard
+              question={module.questions[currentIdx]}
+              streak={streak}
+              onNext={handleNext}
+              onGoDeeper={handleGoDeeper}
             />
           </div}
         {/key}
