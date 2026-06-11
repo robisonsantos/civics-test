@@ -5,7 +5,7 @@
   import { CheckCircle, XCircle, AlertCircle, ArrowLeft, Trophy } from '@lucide/svelte';
 
   const moduleId = page.params.moduleId;
-  const module = getModuleById(moduleId);
+  const module = moduleId ? getModuleById(moduleId) : undefined;
 
   let currentIdx = $state(0);
   let score = $state(0);

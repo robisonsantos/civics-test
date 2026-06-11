@@ -21,7 +21,8 @@ export default defineConfig({
 		VitePWA({
 			registerType: 'autoUpdate',
 			manifest: {
-				title: 'Civics Test Prep',
+				name: 'Civics Test Prep',
+				short_name: 'CivicsPrep',
 				description: 'Master the 2025 US Naturalization Civics Test.',
 				theme_color: '#ffffff',
 				icons: [

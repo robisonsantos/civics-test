@@ -1,4 +1,4 @@
-import { Question, Module } from './types';
+import type { Question, Module } from './types';
 import content from './content.json';
 
 export const modules = Object.values(content) as Module[];

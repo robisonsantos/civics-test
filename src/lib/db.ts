@@ -1,4 +1,4 @@
-import Dexie, { Table } from 'dexie';
+import Dexie, { type Table } from 'dexie';
 
 export interface ProgressEntry {
   id: string; // questionId (e.g., "government_1")
@@ -11,8 +11,8 @@ export class AppDB extends Dexie {
 
   constructor() {
     super('CivicsTestDB');
-    this.version(1).then(() => {
-      this.add_all('progress', []); // Ensure the table exists (or use .schema())
+    this.version(1).stores({
+      progress: 'id, +masteredCount, viewed'
     });
   }
 }
@@ -38,7 +38,6 @@ export async function updateProgress(questionId: string, data: Partial<ProgressE
     const updated = { ...entry, ...data };
     await db.progress.put(updated);
   } else {
-    // If it doesn't exist yet, create it with the provided updates
     const newEntry: ProgressEntry = { id: questionId, masteredCount: 0, viewed: false };
     const final_update = { ...newEntry, ...data };
     await db.progress.put(final_update);

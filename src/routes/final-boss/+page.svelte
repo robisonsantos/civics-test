@@ -11,7 +11,6 @@
   let testQuestions = $state<any[]>([]);
 
   async function checkEligibility() {
-    // A user can only enter Final Boss if all modules have a passing rate of mastered items
     const modulePassMarks = 0.6;
     let allPass = true;
 
@@ -20,7 +19,7 @@
         .where('masteredCount').equals(1)
         .filter(entry => entry.id.startsWith(mod.id + '_'))
         .toArray();
-      
+
       if (mastered.length / mod.questions.length < modulePassMarks) {
         allPass = false;
         break;
@@ -29,16 +28,13 @@
     allMastered = allPass;
 
     if (allPass) {
-      // Prepare randomized test from ALL mastered questions
       const allMasteredIds = await db.progress
         .where('masteredCount').equals(1)
         .primaryKeys();
-      
-      // Select 20 random questions from the mastered set
+
       const shuffled = allMasteredIds.sort(() => 0.5 - Math.random());
       const selectedIds = shuffled.slice(0, 20);
-      
-      // Map IDs back to full question objects
+
       const finalSet = [];
       for (const id of selectedIds) {
         for (const mod of modules) {
@@ -85,9 +81,9 @@
             <div class="flex items-center gap-2 text-amber-400 font-bold uppercase text-xs tracking-widest">
               <Trophy size={14} />
               Final Certification Exam
-            </div_ la
+            </div>
             <span class="text-sm text-slate-400">Question {currentIdx + 1} / {testQuestions.length}</span>
-          </div_ la
+          </div>
 
           <h2 class="text-2xl font-serif font-bold text-center mb-12 min-h-[80px]">
             {testQuestions[currentIdx]?.text}
@@ -103,22 +99,22 @@
                 <button onclick={() => handleAnswer(true)} class="px-6 py-3 rounded-xl bg-slate-800 border border-emerald-900/50 text-emerald-400 hover:bg-emerald-900/20 transition-all font-semibold flex items-center gap-2">
                   <CheckCircle size={18} /> Correct
                 </button>
-              </div_ la
-            </div_ la
-          </div_ la
-        </div_ la
+              </div>
+            </div>
+          </div>
+        </div>
       {:else}
         <div class="bg-slate-800 border border-slate-700 p-12 rounded-3xl shadow-2xl text-center">
           <div class="mx-auto w-20 h-20 bg-amber-500/20 text-amber-500 rounded-full flex items-center justify-center mb-6">
             <Trophy size={40} />
-          </div_ la
+          </div>
           <h1 class="text-3xl font-serif font-bold mb-2">Exam Complete!</h1>
           <p class="text-slate-400 mb-8">You scored {score} out of {testQuestions.length}. <br/> {score >= 12 ? 'You have mastered the civics test!' : 'Keep practicing to reach 12 correct answers.'}</p>
           <a href="/dashboard" class="px-8 py-3 bg-amber-500 text-slate-900 rounded-2xl font-bold hover:bg-amber-400 transition-colors block w-full sm:w-auto mx-auto">
             Back to Dashboard
           </a>
-        </div_ la
+        </div>
       {/if}
-    </div_ la
+    </div>
   {/if}
-</div_ la>
+</div>

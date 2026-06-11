@@ -4,6 +4,7 @@
   import { processAnswer } from '$lib/state';
   import QuestionCard from '$lib/components/QuestionCard.svelte';
   import { fade, slide } from 'svelte/transition';
+  import { ExternalLink } from '@lucide/svelte';
 
   // State for the current session
   let currentIdx = $state(0);
@@ -13,10 +14,10 @@
 
   // Get the module from the URL param
   const moduleId = page.params.moduleId;
-  const module = getModuleById(moduleId);
+  const module = moduleId ? getModuleById(moduleId) : undefined;
 
   function handleNext() {
-    if (currentIdx < module?.questions.length - 1) {
+    if (module && currentIdx < module.questions.length - 1) {
       currentIdx++;
     } else {
       alert('You have completed this module!');
@@ -52,8 +53,8 @@
         <div class="text-right">
           <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Module Progress</span>
           <div class="w-32 h-2 bg-slate-200 rounded-full overflow-hidden">
-            <div 
-              class="h-full bg-emerald-500 transition-all duration-500" 
+            <div
+              class="h-full bg-emerald-500 transition-all duration-500"
               style="width: {((currentIdx + 1) / module.questions.length) * 100}%"
             ></div>
           </div>
@@ -70,7 +71,7 @@
               onNext={handleNext}
               onGoDeeper={handleGoDeeper}
             />
-          </div}
+          </div>
         {/key}
       </div>
     </div>
@@ -78,11 +79,14 @@
 </div>
 
 {#if showModal}
-  <div 
+  <div
     class="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-slate-900/40 backdrop-blur-sm"
+    role="dialog"
+    aria-modal="true"
     onclick={() => showModal = false}
+    onkeydown={(e) => e.key === 'Escape' && (showModal = false)}
   >
-    <div 
+    <div
       class="bg-white w-full max-w-2xl h-[80vh] sm:h-auto sm:max-h-[80vh] rounded-t-3xl sm:rounded-3xl shadow-2xl overflow-hidden flex flex-col animate-in slide-in-from-bottom duration-300"
       onclick={(e) => e.stopPropagation()}
     >
