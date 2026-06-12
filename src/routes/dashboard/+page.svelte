@@ -1,8 +1,13 @@
 <script lang="ts">
   import { modules } from '$lib/data';
   import { db } from '$lib/db';
-  import { LayoutGrid, BookOpen, CheckCircle2, ChevronRight } from '@lucide/svelte';
+  import { LayoutGrid, BookOpen, CheckCircle2, ChevronRight, Trash2, AlertTriangle } from '@lucide/svelte';
   import { fade, fly } from 'svelte/transition';
+  import { onMount } from 'svelte';
+  import { page } from '$app/state';
+
+  // Debug mode: only in dev + debug=true query param
+  let debugMode = $derived(import.meta.env.DEV && page.url.searchParams.get('debug') === 'true');
 
   // Local state to track mastery counts for each module
   let masteryData = $state<Record<string, number>>({});
@@ -26,8 +31,13 @@
     });
   }
 
+  async function resetDatabase() {
+    if (!confirm('This will delete ALL progress data. Are you sure?')) return;
+    await db.progress.clear();
+    await syncProgress();
+  }
+
   // Sync on mount
-  import { onMount } from 'svelte';
   onMount(() => {
     syncProgress();
   });
@@ -48,6 +58,22 @@
         Master the 2025 US Naturalization Civics Test through themed modules and streak-based learning.
       </p>
     </header>
+
+    {#if debugMode}
+      <div class="mb-6 p-4 bg-amber-50 border border-amber-200 rounded-2xl flex items-center justify-between">
+        <div class="flex items-center gap-2 text-amber-800">
+          <AlertTriangle size={20} />
+          <span class="font-medium">Debug Mode Active</span>
+        </div>
+        <button
+          onclick={resetDatabase}
+          class="flex items-center gap-2 px-4 py-2 bg-red-600 text-white rounded-xl font-medium hover:bg-red-700 transition-colors"
+        >
+          <Trash2 size={16} />
+          Reset Database
+        </button>
+      </div>
+    {/if}
 
     <!-- Module Grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -87,38 +113,62 @@
       {/each}
 
       <!-- Final Boss Card -->
-      <a
-        href="/final-boss"
-        class="group relative {allModulesPassed ? 'bg-white border-emerald-200' : 'bg-slate-100 border-slate-200 opacity-75 grayscale'} border p-6 rounded-3xl shadow-sm transition-all duration-300 flex flex-col justify-between h-48 overflow-hidden {allModulesPassed ? 'hover:shadow-xl hover:border-emerald-400' : 'cursor-not-allowed'}"
-      >
-        <div class="relative z-10">
-          <div class="flex justify-between items-start mb-4">
-            <div class="p-3 rounded-2xl {allModulesPassed ? 'bg-slate-50 text-slate-600 group-hover:bg-emerald-50 group-hover:text-emerald-600' : 'bg-slate-200 text-slate-400'} transition-colors">
-              {#if allModulesPassed}
+      {#if allModulesPassed}
+        <a
+          href="/final-boss"
+          class="group relative bg-white border-emerald-200 border p-6 rounded-3xl shadow-sm hover:shadow-xl hover:border-emerald-400 transition-all duration-300 flex flex-col justify-between h-48 overflow-hidden"
+        >
+          <div class="relative z-10">
+            <div class="flex justify-between items-start mb-4">
+              <div class="p-3 rounded-2xl bg-slate-50 text-slate-600 group-hover:bg-emerald-50 group-hover:text-emerald-600 transition-colors">
                 <CheckCircle2 size={24} class="text-emerald-600" />
-              {:else}
+              </div>
+              <div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-bold">
+                Unlocked
+              </div>
+            </div>
+
+            <h3 class="text-xl font-bold text-slate-800 group-hover:text-emerald-700 transition-colors">
+              Final Boss: Certification Exam
+            </h3>
+          </div>
+
+          <div class="relative z-10 flex justify-between items-center mt-4">
+            <span class="text-sm font-medium text-slate-400 group-hover:text-slate-600 transition-colors">
+              Enter Exam
+            </span>
+            <div class="p-2 rounded-full bg-slate-100 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300">
+              <ChevronRight size={20} />
+            </div>
+          </div>
+        </a>
+      {:else}
+        <div class="group relative bg-slate-100 border-slate-200 opacity-75 grayscale border p-6 rounded-3xl shadow-sm flex flex-col justify-between h-48 overflow-hidden cursor-not-allowed">
+          <div class="relative z-10">
+            <div class="flex justify-between items-start mb-4">
+              <div class="p-3 rounded-2xl bg-slate-200 text-slate-400">
                 <LayoutGrid size={24} />
-              {/if}
+              </div>
+              <div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-200 text-slate-500 text-xs font-bold">
+                Locked
+              </div>
             </div>
-            <div class="flex items-center gap-1.5 px-3 py-1 rounded-full {allModulesPassed ? 'bg-emerald-100 text-emerald-700' : 'bg-slate-200 text-slate-500'} text-xs font-bold">
-              {allModulesPassed ? 'Unlocked' : 'Locked'}
-            </div>
+
+            <h3 class="text-xl font-bold text-slate-500">
+              Final Boss: Certification Exam
+            </h3>
           </div>
 
-          <h3 class="text-xl font-bold {allModulesPassed ? 'text-slate-800 group-hover:text-emerald-700' : 'text-slate-500'} transition-colors">
-            Final Boss: Certification Exam
-          </h3>
-        </div>
-
-        <div class="relative z-10 flex justify-between items-center mt-4">
-          <span class="text-sm font-medium {allModulesPassed ? 'text-slate-400 group-hover:text-slate-600' : 'text-slate-400'} transition-colors">
-            {allModulesPassed ? 'Enter Exam' : 'Master all modules first'}
-          </span>
-          <div class="p-2 rounded-full {allModulesPassed ? 'bg-slate-100 group-hover:bg-emerald-600 group-hover:text-white' : 'bg-slate-200 text-slate-400'} transition-all duration-300">
-            <ChevronRight size={20} />
+          <div class="relative z-10 flex justify-between items-center mt-4">
+            <span class="text-sm font-medium text-slate-400">
+              Master all modules first
+            </span>
+            <div class="p-2 rounded-full bg-slate-200 text-slate-400">
+              <ChevronRight size={20} />
+            </div>
           </div>
         </div>
-      </a>
+      {/if}
     </div>
   </div>
 </div>
