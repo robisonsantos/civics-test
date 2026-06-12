@@ -6,7 +6,7 @@
   import { fade, slide } from 'svelte/transition';
 
   import { onMount } from 'svelte';
-  import { ArrowLeft } from '@lucide/svelte';
+  import { ArrowLeft, CheckCircle } from '@lucide/svelte';
 
   // State for the current session
   let queue = $state<string[]>([]);
@@ -20,6 +20,9 @@
   let currentQuestion = $derived(
     queue[0] && module ? module.questions.find(q => q.id === queue[0]) : undefined
   );
+
+  let isComplete = $derived(queue.length === 0);
+  let progressPercent = $derived(isComplete ? 100 : ((initialCount - queue.length) / initialCount) * 100);
 
   function shuffle<T>(array: T[]): T[] {
     return [...array].sort(() => Math.random() - 0.5);
@@ -41,8 +44,8 @@
     if (queue.length > 1) {
       queue.shift();
       streak = 0; // Reset streak for next question
-    } else {
-      alert('You have completed this module!');
+    } else if (queue.length === 1) {
+      queue.shift(); // Clear the last question
     }
   }
 
@@ -87,35 +90,57 @@
       <div class="mb-6 px-4 flex justify-between items-end">
         <div>
           <h1 class="text-2xl font-serif font-bold text-slate-800">{module.title}</h1>
-          <p class="text-slate-500 text-sm">Question {module.questions.length - queue.length + 1} of {initialCount}</p>
+          {#if !isComplete}
+            <p class="text-slate-500 text-sm">Question {module.questions.length - queue.length + 1} of {initialCount}</p>
+          {:else}
+            <p class="text-emerald-600 text-sm font-medium">Module Complete!</p>
+          {/if}
         </div>
         <div class="text-right">
           <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Module Progress</span>
           <div class="w-32 h-2 bg-slate-200 rounded-full overflow-hidden">
             <div
               class="h-full bg-emerald-500 transition-all duration-500"
-              style="width: {((initialCount - queue.length) / initialCount) * 100}%"
+              style="width: {progressPercent}%"
             ></div>
           </div>
         </div>
       </div>
 
-      <!-- Active Question Card -->
-      <div class="relative">
-          {#key queue[0]}
-            <div in:fade={{duration: 200}} class="transition-all">
-              {#if currentQuestion}
-                <QuestionCard
-                  question={currentQuestion}
-                  streak={streak}
-                  onNext={handleNext}
-                  onGoDeeper={handleGoDeeper}
-                  onAnswer={handleAnswer}
-                />
-              {/if}
-            </div>
-          {/key}
-      </div>
+      {#if !isComplete}
+        <!-- Active Question Card -->
+        <div class="relative">
+            {#key queue[0]}
+              <div in:fade={{duration: 200}} class="transition-all">
+                {#if currentQuestion}
+                  <QuestionCard
+                    question={currentQuestion}
+                    streak={streak}
+                    onNext={handleNext}
+                    onGoDeeper={handleGoDeeper}
+                    onAnswer={handleAnswer}
+                  />
+                {/if}
+              </div>
+            {/key}
+        </div>
+      {:else}
+        <!-- Completion Screen -->
+        <div class="bg-white border border-emerald-200 p-12 rounded-3xl shadow-xl text-center animate-in fade-in slide-in-from-bottom-4 duration-500">
+          <div class="mx-auto w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mb-6">
+            <CheckCircle size={32} class="text-emerald-600" />
+          </div>
+          <h2 class="text-2xl font-serif font-bold text-slate-800 mb-3">Module Complete!</h2>
+          <p class="text-slate-500 mb-8">You've finished all questions in this module.</p>
+          <a
+            href="/dashboard"
+            class="inline-flex items-center gap-2 px-8 py-3 bg-emerald-600 text-white rounded-2xl font-bold hover:bg-emerald-700 transition-colors"
+          >
+            Return to Dashboard
+            <ArrowLeft size={20} />
+          </a>
+        </div>
+      {/if}
     </div>
   {/if}
   </div>

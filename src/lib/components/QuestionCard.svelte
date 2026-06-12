@@ -16,9 +16,14 @@
   let showAnswer = $state(false);
   let userEntry = $state('');
   let hasValidated = $state(false);
+  let answerSubmitted = $state(false);
 
   function toggleAnswer() {
     showAnswer = !showAnswer;
+    if (!showAnswer) {
+      answerSubmitted = false;
+      hasValidated = false;
+    }
   }
 
 </script>
@@ -114,16 +119,18 @@
         {#if showAnswer}
         <div class="grid grid-cols-2 gap-3">
           <button
-            onclick={() => { onAnswer(true); hasValidated = true; }}
-            class="flex items-center justify-center py-3 px-4 rounded-2xl bg-emerald-600 text-white hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-900/20"
+            onclick={() => { if (!answerSubmitted) { onAnswer(true); hasValidated = true; answerSubmitted = true; } }}
+            class="flex items-center justify-center py-3 px-4 rounded-2xl bg-emerald-600 text-white hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-900/20 disabled:opacity-50 disabled:cursor-not-allowed"
             aria-label="I got it right"
+            disabled={answerSubmitted}
           >
             <ThumbsUp size={24} />
           </button>
           <button
-            onclick={() => { onAnswer(false); hasValidated = true; }}
-            class="flex items-center justify-center py-3 px-4 rounded-2xl bg-red-600 text-white hover:bg-red-700 transition-all shadow-lg shadow-red-900/20"
+            onclick={() => { if (!answerSubmitted) { onAnswer(false); hasValidated = true; answerSubmitted = true; } }}
+            class="flex items-center justify-center py-3 px-4 rounded-2xl bg-red-600 text-white hover:bg-red-700 transition-all shadow-lg shadow-red-900/20 disabled:opacity-50 disabled:cursor-not-allowed"
             aria-label="I got it wrong"
+            disabled={answerSubmitted}
           >
             <ThumbsDown size={24} />
           </button>
