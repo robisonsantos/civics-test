@@ -4,10 +4,10 @@
     import {
         LayoutGrid,
         BookOpen,
-        CheckCircle2,
+        CircleCheck,
         ChevronRight,
         Trash2,
-        AlertTriangle,
+        TriangleAlert,
     } from "@lucide/svelte";
     import { onMount } from "svelte";
     import { page } from "$app/state";
@@ -82,7 +82,7 @@
                 class="mb-6 p-4 bg-amber-50 border border-amber-200 rounded-2xl flex items-center justify-between"
             >
                 <div class="flex items-center gap-2 text-amber-800">
-                    <AlertTriangle size={20} />
+                    <TriangleAlert size={20} />
                     <span class="font-medium">Debug Mode Active</span>
                 </div>
                 <button
@@ -117,7 +117,7 @@
                             <div
                                 class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 text-slate-500 text-xs font-bold"
                             >
-                                <CheckCircle2 size={12} />
+                                <CircleCheck size={12} />
                                 <span
                                     >{masteryData[mod.id] || 0} / {mod.questions
                                         .length} Mastered</span
@@ -160,7 +160,7 @@
                             <div
                                 class="p-3 rounded-2xl bg-slate-50 text-slate-600 group-hover:bg-emerald-50 group-hover:text-emerald-600 transition-colors"
                             >
-                                <CheckCircle2
+                                <CircleCheck
                                     size={24}
                                     class="text-emerald-600"
                                 />

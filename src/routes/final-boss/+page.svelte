@@ -3,7 +3,15 @@
     import { modules, CONFIG } from "$lib/data";
     import { onMount } from "svelte";
 
-    import { Trophy, Lock, CheckCircle, XCircle, Eye, EyeOff, ArrowLeft } from "@lucide/svelte";
+    import {
+        Trophy,
+        Lock,
+        CircleCheck,
+        CircleX,
+        Eye,
+        EyeOff,
+        ArrowLeft,
+    } from "@lucide/svelte";
     import { goto } from "$app/navigation";
 
     let allMastered = $state(false);
@@ -117,40 +125,50 @@
                     </div>
 
                     <h2
-                        class="text-2xl font-serif font-bold text-center mb-12 min-h-[80px]"
+                        class="text-2xl font-serif font-bold text-center mb-12 min-h-20"
                     >
                         {testQuestions[currentIdx]?.text}
                     </h2>
 
                     {#if !showAnswer}
-                    <div class="mb-6">
-                        <button
-                            onclick={() => showAnswer = true}
-                            class="w-full py-3 px-4 rounded-2xl bg-blue-900/50 text-blue-300 hover:bg-blue-900/70 font-medium flex items-center justify-center gap-2 transition-all duration-200 border border-blue-900/50"
-                        >
-                            <Eye size={18} />
-                            <span>Show Answer</span>
-                        </button>
-                    </div>
-                    {:else}
-                    <div class="mb-6 p-6 rounded-2xl bg-emerald-900/30 border border-emerald-900/50 animate-in fade-in slide-in-from-top-2 duration-300">
-                        <p class="text-sm font-medium text-emerald-300 mb-2">Correct Answer(s)</p>
-                        <div class="text-left space-y-2">
-                            {#each testQuestions[currentIdx]?.answers as answer}
-                                <div class="flex items-center gap-2 text-base leading-relaxed text-emerald-100">
-                                    <span class="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2"></span>
-                                    <span>{answer}</span>
-                                </div>
-                            {/each}
+                        <div class="mb-6">
+                            <button
+                                onclick={() => (showAnswer = true)}
+                                class="w-full py-3 px-4 rounded-2xl bg-blue-900/50 text-blue-300 hover:bg-blue-900/70 font-medium flex items-center justify-center gap-2 transition-all duration-200 border border-blue-900/50"
+                            >
+                                <Eye size={18} />
+                                <span>Show Answer</span>
+                            </button>
                         </div>
-                        <button
-                            onclick={() => showAnswer = false}
-                            class="w-full mt-4 py-2 px-4 rounded-2xl bg-slate-700 text-slate-300 hover:bg-slate-600 font-medium flex items-center justify-center gap-2 transition-all duration-200"
+                    {:else}
+                        <div
+                            class="mb-6 p-6 rounded-2xl bg-emerald-900/30 border border-emerald-900/50 animate-in fade-in slide-in-from-top-2 duration-300"
                         >
-                            <EyeOff size={18} />
-                            <span>Hide Answer</span>
-                        </button>
-                    </div>
+                            <p
+                                class="text-sm font-medium text-emerald-300 mb-2"
+                            >
+                                Correct Answer(s)
+                            </p>
+                            <div class="text-left space-y-2">
+                                {#each testQuestions[currentIdx]?.answers as answer}
+                                    <div
+                                        class="flex items-center gap-2 text-base leading-relaxed text-emerald-100"
+                                    >
+                                        <span
+                                            class="shrink-0 w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2"
+                                        ></span>
+                                        <span>{answer}</span>
+                                    </div>
+                                {/each}
+                            </div>
+                            <button
+                                onclick={() => (showAnswer = false)}
+                                class="w-full mt-4 py-2 px-4 rounded-2xl bg-slate-700 text-slate-300 hover:bg-slate-600 font-medium flex items-center justify-center gap-2 transition-all duration-200"
+                            >
+                                <EyeOff size={18} />
+                                <span>Hide Answer</span>
+                            </button>
+                        </div>
                     {/if}
 
                     <div class="grid grid-cols-1 gap-3">
@@ -162,16 +180,22 @@
                             </p>
                             <div class="flex justify-center gap-4">
                                 <button
-                                    onclick={() => { handleAnswer(false); showAnswer = false; }}
+                                    onclick={() => {
+                                        handleAnswer(false);
+                                        showAnswer = false;
+                                    }}
                                     class="px-6 py-3 rounded-xl bg-slate-800 border border-red-900/50 text-red-400 hover:bg-red-900/20 transition-all font-semibold flex items-center gap-2"
                                 >
-                                    <XCircle size={18} /> Incorrect
+                                    <CircleX size={18} /> Incorrect
                                 </button>
                                 <button
-                                    onclick={() => { handleAnswer(true); showAnswer = false; }}
+                                    onclick={() => {
+                                        handleAnswer(true);
+                                        showAnswer = false;
+                                    }}
                                     class="px-6 py-3 rounded-xl bg-slate-800 border border-emerald-900/50 text-emerald-400 hover:bg-emerald-900/20 transition-all font-semibold flex items-center gap-2"
                                 >
-                                    <CheckCircle size={18} /> Correct
+                                    <CircleCheck size={18} /> Correct
                                 </button>
                             </div>
                         </div>
