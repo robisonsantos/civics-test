@@ -4,15 +4,13 @@
   import { processAnswer } from '$lib/state';
   import QuestionCard from '$lib/components/QuestionCard.svelte';
   import { fade, slide } from 'svelte/transition';
-  import { ExternalLink } from '@lucide/svelte';
+
   import { onMount } from 'svelte';
 
   // State for the current session
   let queue = $state<string[]>([]);
   let initialCount = $state(0);
   let streak = $state(0);
-  let showModal = $state(false);
-  let modalUrl = $state('');
 
   // Get the module from the URL param
   const moduleId = page.params.moduleId;
@@ -41,6 +39,7 @@
   function handleNext() {
     if (queue.length > 1) {
       queue.shift();
+      streak = 0; // Reset streak for next question
     } else {
       alert('You have completed this module!');
     }
@@ -61,8 +60,7 @@
   }
 
   function handleGoDeeper(url: string) {
-    modalUrl = url;
-    showModal = true;
+    window.open(url, '_blank', 'noopener,noreferrer');
   }
 </script>
 
@@ -110,45 +108,4 @@
       </div>
     </div>
   {/if}
-</div>
-
-{#if showModal}
-  <div
-    class="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-slate-900/40 backdrop-blur-sm"
-    role="presentation"
-    onkeydown={(e) => e.key === 'Escape' && (showModal = false)}
-    onclick={() => showModal = false}
-  >
-    <div
-      class="bg-white w-full max-w-2xl h-[80vh] sm:h-auto sm:max-h-[80vh] rounded-t-3xl sm:rounded-3xl shadow-2xl overflow-hidden flex flex-col animate-in slide-in-from-bottom duration-300"
-      onclick={(e) => e.stopPropagation()}
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="modal-title"
-      tabindex="-1"
-    >
-      <div class="p-4 border-b border-slate-100 flex justify-between items-center bg-slate-50">
-        <h3 id="modal-title" class="font-bold text-slate-800 flex items-center gap-2">
-          <ExternalLink size={16} />
-          Deep Dive
-        </h3>
-        <button
-          onclick={() => showModal = false}
-          class="p-2 hover:bg-slate-200 rounded-full transition-colors"
-          aria-label="Close modal"
-        >
-          <span class="text-2xl leading-none">&times;</span>
-        </button>
-      </div>
-      <div class="flex-1 overflow-auto p-6">
-        {#if modalUrl}
-          <iframe src={modalUrl} class="w-full h-full border-none rounded-xl" title="Deep Dive"></iframe>
-        {:else}
-          <div class="flex flex-col items-center justify-center h-full text-center p-8">
-            <p class="text-slate-500">No additional resources available for this question.</p>
-          </div>
-        {/if}
-      </div>
-    </div>
   </div>
-{/if}

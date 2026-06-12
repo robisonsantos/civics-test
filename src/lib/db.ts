@@ -12,8 +12,8 @@ export class AppDB extends Dexie {
 
   constructor() {
     super('CivicsTestDB');
-    this.version(1).stores({
-      progress: 'id, +masteredCount, +streak, viewed'
+    this.version(2).stores({
+      progress: 'id, masteredCount, streak, viewed'
     });
   }
 }
