@@ -8,7 +8,9 @@
         "text": "What is the form of government of the United States?",
         "type": "standard",
         "answers": [
-          "Republic"
+          "Republic",
+          "Constitution-based federal republic",
+          "Representative democracy"
         ],
         "wikiLink": ""
       },
@@ -26,7 +28,10 @@
         "text": "Name one thing the U.S. Constitution does.",
         "type": "standard",
         "answers": [
-          "Forms the government"
+          "Forms the government",
+          "Defines powers of government",
+          "Defines the parts of government",
+          "Protects the rights of the people"
         ],
         "wikiLink": "https://en.wikipedia.org/wiki/Constitution_of_the_United_States"
       },
@@ -35,7 +40,11 @@
         "text": "The U.S. Constitution starts with the words \u201cWe the People.\u201d What does \u201cWe the People\u201d mean?",
         "type": "standard",
         "answers": [
-          "Self-government"
+          "Self-government",
+          "Popular sovereignty",
+          "Consent of the governed",
+          "People should govern themselves",
+          "(Example of) social contract"
         ],
         "wikiLink": "https://en.wikipedia.org/wiki/Constitution_of_the_United_States"
       },
@@ -44,7 +53,8 @@
         "text": "How are changes made to the U.S. Constitution?",
         "type": "standard",
         "answers": [
-          "Amendments"
+          "Amendments",
+          "The amendment process"
         ],
         "wikiLink": "https://en.wikipedia.org/wiki/Constitution_of_the_United_States"
       },
@@ -53,7 +63,8 @@
         "text": "What does the Bill of Rights protect?",
         "type": "standard",
         "answers": [
-          "(The basic) rights of Americans"
+          "(The basic) rights of Americans",
+          "(The basic) rights of people living in the United States"
         ],
         "wikiLink": "https://en.wikipedia.org/wiki/United_States_Bill_of_Rights"
       },
@@ -71,7 +82,10 @@
         "text": "Why is the Declaration of Independence important?",
         "type": "standard",
         "answers": [
-          "It says America is free from British control."
+          "It says America is free from British control.",
+          "It says all people are created equal.",
+          "It identifies inherent rights.",
+          "It identifies individual freedoms."
         ],
         "wikiLink": "https://en.wikipedia.org/wiki/United_States_Declaration_of_Independence"
       },
@@ -82,14 +96,19 @@
         "answers": [
           "Declaration of Independence"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/United_States_Declaration_of_Independence"
       },
       {
         "id": "government_10",
         "text": "Name two important ideas from the Declaration of Independence and the U.S. Constitution.",
         "type": "standard",
         "answers": [
-          "Equality"
+          "Equality",
+          "Liberty",
+          "Social contract",
+          "Natural rights",
+          "Limited government",
+          "Self-government"
         ],
         "wikiLink": "https://en.wikipedia.org/wiki/Constitution_of_the_United_States"
       },
@@ -100,32 +119,43 @@
         "answers": [
           "Declaration of Independence"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/United_States_Declaration_of_Independence"
       },
       {
         "id": "government_12",
         "text": "What is the economic system of the United States?",
         "type": "standard",
         "answers": [
-          "Capitalism"
+          "Capitalism",
+          "Free market economy"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/Capitalism"
       },
       {
         "id": "government_13",
         "text": "What is the rule of law?",
         "type": "standard",
         "answers": [
-          "Everyone must follow the law."
+          "Everyone must follow the law.",
+          "Leaders must obey the law.",
+          "Government must obey the law.",
+          "No one is above the law."
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/Rule_of_law"
       },
       {
         "id": "government_14",
         "text": "Many documents influenced the U.S. Constitution. Name one.",
         "type": "standard",
         "answers": [
-          "Declaration of Independence"
+          "Declaration of Independence",
+          "Articles of Confederation",
+          "Federalist Papers",
+          "Anti-Federalist Papers",
+          "Virginia Declaration of Rights",
+          "Fundamental Orders of Connecticut",
+          "Mayflower Compact",
+          "Iroquois Great Law of Peace"
         ],
         "wikiLink": "https://en.wikipedia.org/wiki/Constitution_of_the_United_States"
       },
@@ -134,18 +164,21 @@
         "text": "There are three branches of government. Why?",
         "type": "standard",
         "answers": [
-          "So one part does not become too powerful"
+          "So one part does not become too powerful",
+          "Checks and balances",
+          "Separation of powers"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/Separation_of_powers_under_the_United_States_Constitution"
       },
       {
         "id": "government_16",
         "text": "Name the three branches of government.",
         "type": "standard",
         "answers": [
-          "Legislative, executive, and judicial"
+          "Legislative, executive, and judicial",
+          "Congress, president, and the courts"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/Federal_government_of_the_United_States"
       },
       {
         "id": "government_17",
@@ -154,16 +187,18 @@
         "answers": [
           "Executive branch"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/Federal_government_of_the_United_States"
       },
       {
         "id": "government_18",
         "text": "What part of the federal government writes laws?",
         "type": "standard",
         "answers": [
-          "(U.S.) Congress"
+          "(U.S.) Congress",
+          "(U.S. or national) legislature",
+          "Legislative branch"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/Federal_government_of_the_United_States"
       },
       {
         "id": "government_19",
@@ -172,16 +207,18 @@
         "answers": [
           "Senate and House (of Representatives)"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/United_States_Congress"
       },
       {
         "id": "government_20",
         "text": "Name one power of the U.S. Congress.",
         "type": "standard",
         "answers": [
-          "Writes laws"
+          "Writes laws",
+          "Declares war",
+          "Makes the federal budget"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/United_States_Congress"
       },
       {
         "id": "government_21",
@@ -190,7 +227,7 @@
         "answers": [
           "One hundred (100)"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/United_States_Senate"
       },
       {
         "id": "government_22",
@@ -199,15 +236,13 @@
         "answers": [
           "Six (6) years"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/United_States_Senate"
       },
       {
         "id": "government_23",
         "text": "Who is one of your state\u2019s U.S. senators now?",
         "type": "personal_info",
-        "answers": [
-          "Answers will vary. [District of Columbia residents and residents of U.S. territories should answer that D.C. (or"
-        ],
+        "answers": [],
         "wikiLink": ""
       },
       {
@@ -217,7 +252,7 @@
         "answers": [
           "Four hundred thirty-five (435)"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/United_States_House_of_Representatives"
       },
       {
         "id": "government_25",
@@ -226,7 +261,7 @@
         "answers": [
           "Two (2) years"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/United_States_House_of_Representatives"
       },
       {
         "id": "government_26",
@@ -235,7 +270,7 @@
         "answers": [
           "To more closely follow public opinion"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/United_States_House_of_Representatives"
       },
       {
         "id": "government_27",
@@ -244,24 +279,23 @@
         "answers": [
           "Two (2)"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/United_States_Senate"
       },
       {
         "id": "government_28",
         "text": "Why does each state have two senators?",
         "type": "standard",
         "answers": [
-          "Equal representation (for small states)"
+          "Equal representation (for small states)",
+          "The Great Compromise (Connecticut Compromise)"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/United_States_Senate"
       },
       {
         "id": "government_29",
         "text": "Name your U.S. representative.",
-        "type": "standard",
-        "answers": [
-          "Answers will vary. [Residents of territories with nonvoting Delegates or Resident Commissioners may provide"
-        ],
+        "type": "personal_info",
+        "answers": [],
         "wikiLink": ""
       },
       {
@@ -271,14 +305,15 @@
         "answers": [
           "Visit uscis.gov/citizenship/testupdates for the name of the Speaker of the House of Representatives."
         ],
-        "wikiLink": ""
+        "wikiLink": "https://uscis.gov/citizenship/testupdates"
       },
       {
         "id": "government_31",
         "text": "Who does a U.S. senator represent?",
         "type": "standard",
         "answers": [
-          "Citizens of their state"
+          "Citizens of their state",
+          "People of their state"
         ],
         "wikiLink": ""
       },
@@ -296,7 +331,10 @@
         "text": "Who does a member of the House of Representatives represent?",
         "type": "standard",
         "answers": [
-          "Citizens in their (congressional) district"
+          "Citizens in their (congressional) district",
+          "Citizens in their district",
+          "People from their (congressional) district",
+          "People in their district"
         ],
         "wikiLink": ""
       },
@@ -314,7 +352,9 @@
         "text": "Some states have more representatives than other states. Why?",
         "type": "standard",
         "answers": [
-          "(Because of) the state\u2019s population"
+          "(Because of) the state's population",
+          "(Because) they have more people",
+          "(Because) some states have more people"
         ],
         "wikiLink": ""
       },
@@ -332,9 +372,10 @@
         "text": "The President of the United States can serve only two terms. Why?",
         "type": "standard",
         "answers": [
-          "(Because of) the 22nd Amendment"
+          "(Because of) the 22nd Amendment",
+          "To keep the president from becoming too powerful"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/Twenty-second_Amendment_to_the_United_States_Constitution"
       },
       {
         "id": "government_38",
@@ -343,7 +384,7 @@
         "answers": [
           "Visit uscis.gov/citizenship/testupdates for the name of the President of the United States."
         ],
-        "wikiLink": ""
+        "wikiLink": "https://uscis.gov/citizenship/testupdates"
       },
       {
         "id": "government_39",
@@ -352,7 +393,7 @@
         "answers": [
           "Visit uscis.gov/citizenship/testupdates for the name of the Vice President of the United States."
         ],
-        "wikiLink": ""
+        "wikiLink": "https://uscis.gov/citizenship/testupdates"
       },
       {
         "id": "government_40",
@@ -361,14 +402,19 @@
         "answers": [
           "The Vice President (of the United States)"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/United_States_presidential_line_of_succession"
       },
       {
         "id": "government_41",
         "text": "Name one power of the president.",
         "type": "standard",
         "answers": [
-          "Signs bills into law"
+          "Signs bills into law",
+          "Vetoes bills",
+          "Enforces laws",
+          "Commander in Chief (of the military)",
+          "Chief diplomat",
+          "Appoints federal judges"
         ],
         "wikiLink": ""
       },
@@ -413,13 +459,15 @@
         "text": "The executive branch has many parts. Name one.",
         "type": "standard",
         "answers": [
-          "President (of the United States)"
+          "President (of the United States)",
+          "Cabinet",
+          "Federal departments and agencies"
         ],
         "wikiLink": ""
       },
       {
         "id": "government_47",
-        "text": "What does the President\u2019s Cabinet do?",
+        "text": "What does the President's Cabinet do?",
         "type": "standard",
         "answers": [
           "Advises the President (of the United States)"
@@ -431,7 +479,28 @@
         "text": "What are two Cabinet-level positions?",
         "type": "standard",
         "answers": [
-          "Attorney General"
+          "Attorney General",
+          "Secretary of Agriculture",
+          "Secretary of Commerce",
+          "Secretary of Education",
+          "Secretary of Energy",
+          "Secretary of Health and Human Services",
+          "Secretary of Homeland Security",
+          "Secretary of Housing and Urban Development",
+          "Secretary of the Interior",
+          "Secretary of Labor",
+          "Secretary of State",
+          "Secretary of Transportation",
+          "Secretary of the Treasury",
+          "Secretary of Veterans Affairs",
+          "Secretary of War (Defense)",
+          "Vice-President",
+          "Administrator of the Environmental Protection Agency",
+          "Administrator of the Small Business Administration",
+          "Director of the Central Intelligence Agency",
+          "Director of the Office of Management and Budget",
+          "Director of National Intelligence",
+          "United States Trade Representative"
         ],
         "wikiLink": ""
       },
@@ -440,7 +509,8 @@
         "text": "Why is the Electoral College important?",
         "type": "standard",
         "answers": [
-          "It decides who is elected president."
+          "It decides who is elected president.",
+          "It provides a compromise between the popular election of the president and congressional selection."
         ],
         "wikiLink": "https://en.wikipedia.org/wiki/United_States_Electoral_College"
       },
@@ -449,7 +519,8 @@
         "text": "What is one part of the judicial branch?",
         "type": "standard",
         "answers": [
-          "Supreme Court"
+          "Supreme Court",
+          "Federal Courts"
         ],
         "wikiLink": ""
       },
@@ -458,7 +529,10 @@
         "text": "What does the judicial branch do?",
         "type": "standard",
         "answers": [
-          "Reviews laws"
+          "Reviews laws",
+          "Explains laws",
+          "Resolves disputes (disagreements) about the law",
+          "Decides if a law goes against the (U.S.) Constitution"
         ],
         "wikiLink": ""
       },
@@ -469,7 +543,7 @@
         "answers": [
           "Supreme Court"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/Supreme_Court_of_the_United_States"
       },
       {
         "id": "government_53",
@@ -494,7 +568,9 @@
         "text": "How long do Supreme Court justices serve?",
         "type": "standard",
         "answers": [
-          "(For) life"
+          "(For) life",
+          "Lifetime appointment",
+          "(Until) retirement"
         ],
         "wikiLink": "https://en.wikipedia.org/wiki/Supreme_Court_of_the_United_States"
       },
@@ -503,7 +579,8 @@
         "text": "Supreme Court justices serve for life. Why?",
         "type": "standard",
         "answers": [
-          "To be independent (of politics)"
+          "To be independent (of politics)",
+          "To limit outside (political) influence"
         ],
         "wikiLink": "https://en.wikipedia.org/wiki/Supreme_Court_of_the_United_States"
       },
@@ -514,14 +591,19 @@
         "answers": [
           "Visit uscis.gov/citizenship/testupdates for the name of the Chief Justice of the United States."
         ],
-        "wikiLink": ""
+        "wikiLink": "https://uscis.gov/citizenship/testupdates"
       },
       {
         "id": "government_58",
         "text": "Name one power that is only for the federal government.",
         "type": "standard",
         "answers": [
-          "Print paper money"
+          "Print paper money",
+          "Mint coins",
+          "Declare war",
+          "Create an army",
+          "Make treaties",
+          "Set foreign policy"
         ],
         "wikiLink": ""
       },
@@ -530,7 +612,12 @@
         "text": "Name one power that is only for the states.",
         "type": "standard",
         "answers": [
-          "Provide schooling and education"
+          "Provide schooling and education",
+          "Provide schooling and education",
+          "Provide protection (police)",
+          "Provide safety (fire departments)",
+          "Give a driver’s license",
+          "Approve zoning and land use"
         ],
         "wikiLink": ""
       },
@@ -541,32 +628,31 @@
         "answers": [
           "(It states that the) powers not given to the federal government belong to the states or to the people."
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/Tenth_Amendment_to_the_United_States_Constitution"
       },
       {
         "id": "government_61",
         "text": "Who is the governor of your state now?",
         "type": "personal_info",
-        "answers": [
-          "Answers will vary. [District of Columbia residents should answer that D.C. does not have a governor.]"
-        ],
+        "answers": [],
         "wikiLink": ""
       },
       {
         "id": "government_62",
         "text": "What is the capital of your state?",
         "type": "personal_info",
-        "answers": [
-          "Answers will vary. [District of Columbia residents should answer that D.C. is not a state and does not have a"
-        ],
-        "wikiLink": ""
+        "answers": [],
+        "wikiLink": "https://en.wikipedia.org/wiki/List_of_capitals_in_the_United_States"
       },
       {
         "id": "government_63",
         "text": "There are four amendments to the U.S. Constitution about who can vote. Describe one of them.",
         "type": "standard",
         "answers": [
-          "Citizens eighteen (18) and older (can vote)."
+          "Citizens eighteen (18) and older (can vote).",
+          "You don’t have to pay (a poll tax) to vote.",
+          "Any citizen can vote. (Women and men can vote.)",
+          "A male citizen of any race (can vote)."
         ],
         "wikiLink": "https://en.wikipedia.org/wiki/Constitution_of_the_United_States"
       },
@@ -575,7 +661,9 @@
         "text": "Who can vote in federal elections, run for federal office, and serve on a jury in the United States?",
         "type": "standard",
         "answers": [
-          "Citizens"
+          "Citizens",
+          "Citizens of the United States",
+          "U.S. citizens"
         ],
         "wikiLink": ""
       },
@@ -584,7 +672,12 @@
         "text": "What are three rights of everyone living in the United States?",
         "type": "standard",
         "answers": [
-          "Freedom of expression"
+          "Freedom of expression",
+          "Freedom of speech",
+          "Freedom of assembly",
+          "Freedom to petition the government",
+          "Freedom of religion",
+          "The right to bear arms"
         ],
         "wikiLink": ""
       },
@@ -593,25 +686,33 @@
         "text": "What do we show loyalty to when we say the Pledge of Allegiance?",
         "type": "standard",
         "answers": [
-          "The United States"
+          "The United States",
+          "The flag"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/Pledge_of_Allegiance"
       },
       {
         "id": "government_67",
         "text": "Name two promises that new citizens make in the Oath of Allegiance.",
         "type": "standard",
         "answers": [
-          "Give up loyalty to other countries"
+          "Give up loyalty to other countries",
+          "Defend the (U.S.) Constitution",
+          "Obey the laws of the United States",
+          "Serve in the military (if needed)",
+          "Serve (help, do important work for) the nation (if needed)",
+          "Be loyal to the United States"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/Pledge_of_Allegiance"
       },
       {
         "id": "government_68",
         "text": "How can people become United States citizens?",
         "type": "standard",
         "answers": [
-          "Be born in the United States, under the conditions set by the 14th Amendment"
+          "Be born in the United States, under the conditions set by the 14th Amendment",
+          "Naturalize",
+          "Derive citizenship (under conditions set by Congress)"
         ],
         "wikiLink": ""
       },
@@ -620,7 +721,16 @@
         "text": "What are two examples of civic participation in the United States?",
         "type": "standard",
         "answers": [
-          "Vote"
+          "Vote",
+          "Run for office",
+          "Join a political party",
+          "Help with a campaign",
+          "Join a civic group",
+          "Join a community group",
+          "Give an elected official your opinion (on an issue)",
+          "Contact elected officials",
+          "Support or oppose an issue or policy",
+          "Write to a newspaper"
         ],
         "wikiLink": ""
       },
@@ -629,7 +739,12 @@
         "text": "What is one way Americans can serve their country?",
         "type": "standard",
         "answers": [
-          "Vote"
+          "Vote",
+          "Pay taxes",
+          "Obey the law",
+          "Serve in the military",
+          "Run for office",
+          "Work for local, state, or federal government"
         ],
         "wikiLink": ""
       },
@@ -638,7 +753,10 @@
         "text": "Why is it important to pay federal taxes?",
         "type": "standard",
         "answers": [
-          "Required by law"
+          "Required by law",
+          "All people pay to fund the federal government",
+          "Required by the (U.S.) Constitution (16th Amendment)",
+          "Civic duty"
         ],
         "wikiLink": ""
       },
@@ -647,17 +765,13 @@
         "text": "It is important for all men age 18 through 25 to register for the Selective Service. Name one reason why.",
         "type": "standard",
         "answers": [
-          "Required by law"
+          "Required by law",
+          "Civic duty",
+          "Makes the draft fair, if needed"
         ],
         "wikiLink": ""
       }
     ],
-    "masteredCount": 0
-  },
-  "rights": {
-    "id": "rights",
-    "title": "Rights & Responsibilities",
-    "questions": [],
     "masteredCount": 0
   },
   "history": {
@@ -669,7 +783,11 @@
         "text": "The colonists came to America for many reasons. Name one.",
         "type": "standard",
         "answers": [
-          "Freedom"
+          "Freedom",
+          "Political liberty",
+          "Religious freedom",
+          "Economic opportunity",
+          "Escape persecution"
         ],
         "wikiLink": ""
       },
@@ -678,7 +796,8 @@
         "text": "Who lived in America before the Europeans arrived?",
         "type": "standard",
         "answers": [
-          "American Indians"
+          "American Indians",
+          "Native Americans"
         ],
         "wikiLink": ""
       },
@@ -687,7 +806,8 @@
         "text": "What group of people was taken and sold as slaves?",
         "type": "standard",
         "answers": [
-          "Africans"
+          "Africans",
+          "People from Africa"
         ],
         "wikiLink": ""
       },
@@ -696,16 +816,27 @@
         "text": "What war did the Americans fight to win independence from Britain?",
         "type": "standard",
         "answers": [
-          "American Revolution"
+          "American Revolution",
+          "The (American) Revolutionary War",
+          "War for (American) Independence"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/American_Revolutionary_War"
       },
       {
         "id": "history_77",
         "text": "Name one reason why the Americans declared independence from Britain.",
         "type": "standard",
         "answers": [
-          "High taxes"
+          "High taxes",
+          "Taxation without representation",
+          "British soldiers stayed in Americans’ houses (boarding, quartering)",
+          "They did not have self-government",
+          "Boston Massacre",
+          "Boston Tea Party (Tea Act)",
+          "Stamp Act",
+          "Sugar Act",
+          "Townshend Acts",
+          "Intolerable (Coercive) Acts"
         ],
         "wikiLink": ""
       },
@@ -732,7 +863,13 @@
         "text": "The American Revolution had many important events. Name one.",
         "type": "standard",
         "answers": [
-          "(Battle of) Bunker Hill"
+          "(Battle of) Bunker Hill",
+          "(Battle of) Bunker Hill",
+          "Declaration of Independence",
+          "Washington Crossing the Delaware (Battle of Trenton)",
+          "(Battle of) Saratoga",
+          "Valley Forge (Encampment)",
+          "(Battle of) Yorktown (British surrender at Yorktown)"
         ],
         "wikiLink": ""
       },
@@ -741,7 +878,19 @@
         "text": "There were 13 original states. Name five.",
         "type": "standard",
         "answers": [
-          "New Hampshire"
+          "New Hampshire",
+          "Massachusetts",
+          "Rhode Island",
+          "Connecticut",
+          "New York",
+          "New Jersey",
+          "Pennsylvania",
+          "Delaware",
+          "Maryland",
+          "Virginia",
+          "North Carolina",
+          "South Carolina",
+          "Georgia"
         ],
         "wikiLink": ""
       },
@@ -752,32 +901,40 @@
         "answers": [
           "(U.S.) Constitution"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/Constitution_of_the_United_States"
       },
       {
         "id": "history_83",
         "text": "The Federalist Papers supported the passage of the U.S. Constitution. Name one of the writers.",
         "type": "standard",
         "answers": [
-          "(James) Madison"
+          "(James) Madison",
+          "(Alexander) Hamilton",
+          "(John) Jay",
+          "Publius"
         ],
-        "wikiLink": "https://en.wikipedia.org/wiki/Constitution_of_the_United_States"
+        "wikiLink": "https://en.wikipedia.org/wiki/The_Federalist_Papers"
       },
       {
         "id": "history_84",
         "text": "Why were the Federalist Papers important?",
         "type": "standard",
         "answers": [
-          "They helped people understand the (U.S.) Constitution."
+          "They helped people understand the (U.S.) Constitution.",
+          "They supported passing the (U.S.) Constitution."
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/The_Federalist_Papers"
       },
       {
         "id": "history_85",
         "text": "Benjamin Franklin is famous for many things. Name one.",
         "type": "standard",
         "answers": [
-          "Founded the first free public libraries"
+          "Founded the first free public libraries",
+          "First Postmaster General of the United States",
+          "Helped write the Declaration of Independence",
+          "Inventor",
+          "U.S. diplomat"
         ],
         "wikiLink": ""
       },
@@ -786,52 +943,71 @@
         "text": "George Washington is famous for many things. Name one.",
         "type": "standard",
         "answers": [
-          "\u201cFather of Our Country\u201d"
+          "\u201cFather of Our Country\u201d",
+          "First president of the United States",
+          "General of the Continental Army",
+          "President of the Constitutional Convention"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/George_Washington"
       },
       {
         "id": "history_87",
         "text": "Thomas Jefferson is famous for many things. Name one.",
         "type": "standard",
         "answers": [
-          "Writer of the Declaration of Independence"
+          "Writer of the Declaration of Independence",
+          "Third president of the United States",
+          "Doubled the size of the United States (Louisiana Purchase)",
+          "First Secretary of State",
+          "Founded the University of Virginia",
+          "Writer of the Virginia Statute on Religious Freedom"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/Thomas_Jefferson"
       },
       {
         "id": "history_88",
         "text": "James Madison is famous for many things. Name one.",
         "type": "standard",
         "answers": [
-          "\u201cFather of the Constitution\u201d"
+          "\u201cFather of the Constitution\u201d",
+          "Fourth president of the United States",
+          "President during the War of 1812",
+          "One of the writers of the Federalist Papers"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/James_Madison"
       },
       {
         "id": "history_89",
         "text": "Alexander Hamilton is famous for many things. Name one.",
         "type": "standard",
         "answers": [
-          "First Secretary of the Treasury"
+          "First Secretary of the Treasury",
+          "One of the writers of the Federalist Papers",
+          "Helped establish the First Bank of the United States",
+          "Aide to General George Washington",
+          "Member of the Continental Congress"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/Alexander_Hamilton"
       },
       {
         "id": "history_90",
         "text": "What territory did the United States buy from France in 1803?",
         "type": "standard",
         "answers": [
-          "Louisiana Territory"
+          "Louisiana Territory",
+          "Louisiana"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/Louisiana"
       },
       {
         "id": "history_91",
         "text": "Name one war fought by the United States in the 1800s.",
         "type": "standard",
         "answers": [
-          "War of 1812"
+          "War of 1812",
+          "Mexican-American War",
+          "Civil War",
+          "Spanish-American War"
         ],
         "wikiLink": ""
       },
@@ -842,14 +1018,21 @@
         "answers": [
           "The Civil War"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/American_Civil_War"
       },
       {
         "id": "history_93",
         "text": "The Civil War had many important events. Name one.",
         "type": "standard",
         "answers": [
-          "(Battle of) Fort Sumter"
+          "(Battle of) Fort Sumter",
+          "Emancipation Proclamation",
+          "(Battle of) Vicksburg",
+          "(Battle of) Gettysburg",
+          "Sherman’s March",
+          "(Surrender at) Appomattox",
+          "(Battle of) Antietam/Sharpsburg",
+          "Lincoln was assassinated"
         ],
         "wikiLink": "https://en.wikipedia.org/wiki/American_Civil_War"
       },
@@ -858,18 +1041,25 @@
         "text": "Abraham Lincoln is famous for many things. Name one.",
         "type": "standard",
         "answers": [
-          "Freed the slaves (Emancipation Proclamation)"
+          "Freed the slaves (Emancipation Proclamation)",
+          "Saved (or preserved) the Union",
+          "Led the United States during the Civil War",
+          "16th president of the United States",
+          "Delivered the Gettysburg Address"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/Abraham_Lincoln"
       },
       {
         "id": "history_95",
         "text": "What did the Emancipation Proclamation do?",
         "type": "standard",
         "answers": [
-          "Freed the slaves"
+          "Freed the slaves",
+          "Freed slaves in the Confederacy",
+          "Freed slaves in the Confederate states",
+          "Freed slaves in most Southern states"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/Emancipation_Proclamation"
       },
       {
         "id": "history_96",
@@ -878,7 +1068,7 @@
         "answers": [
           "The Civil War"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/American_Civil_War"
       },
       {
         "id": "history_97",
@@ -887,23 +1077,31 @@
         "answers": [
           "14th Amendment"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/Fourteenth_Amendment_to_the_United_States_Constitution"
       },
       {
         "id": "history_98",
         "text": "When did all men get the right to vote?",
         "type": "standard",
         "answers": [
-          "After the Civil War"
+          "After the Civil War",
+          "During Reconstruction",
+          "(With the) 15th Amendment",
+          "1870"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/Fifteenth_Amendment_to_the_United_States_Constitution"
       },
       {
         "id": "history_99",
-        "text": "Name one leader of the women\u2019s rights movement in the 1800s.",
+        "text": "Name one leader of the women's rights movement in the 1800s.",
         "type": "standard",
         "answers": [
-          "Susan B. Anthony"
+          "Susan B. Anthony",
+          "Elizabeth Cady Stanton",
+          "Sojourner Truth",
+          "Harriet Tubman",
+          "Lucretia Mott",
+          "Lucy Stone"
         ],
         "wikiLink": ""
       },
@@ -912,7 +1110,11 @@
         "text": "Name one war fought by the United States in the 1900s.",
         "type": "standard",
         "answers": [
-          "World War I"
+          "World War I",
+          "World War II",
+          "Korean War",
+          "Vietnam War",
+          "(Persian) Gulf War"
         ],
         "wikiLink": ""
       },
@@ -921,7 +1123,9 @@
         "text": "Why did the United States enter World War I?",
         "type": "standard",
         "answers": [
-          "Because Germany attacked U.S. (civilian) ships"
+          "Because Germany attacked U.S. (civilian) ships",
+          "To support the Allied Powers (England, France, Italy, and Russia)",
+          "To oppose the Central Powers (Germany, Austria-Hungary, the Ottoman Empire, and Bulgaria)"
         ],
         "wikiLink": ""
       },
@@ -930,9 +1134,11 @@
         "text": "When did all women get the right to vote?",
         "type": "standard",
         "answers": [
-          "1920"
+          "1920",
+          "After World War I",
+          "(With the) 19th Amendment"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/Nineteenth_Amendment_to_the_United_States_Constitution"
       },
       {
         "id": "history_103",
@@ -941,16 +1147,17 @@
         "answers": [
           "Longest economic recession in modern history"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/Great_Depression"
       },
       {
         "id": "history_104",
         "text": "When did the Great Depression start?",
         "type": "standard",
         "answers": [
-          "The Great Crash (1929)"
+          "The Great Crash (1929)",
+          "Stock market crash of 1929"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/Great_Depression"
       },
       {
         "id": "history_105",
@@ -966,7 +1173,10 @@
         "text": "Why did the United States enter World War II?",
         "type": "standard",
         "answers": [
-          "(Bombing of) Pearl Harbor"
+          "(Bombing of) Pearl Harbor",
+          "Japanese attacked Pearl Harbor",
+          "To support the Allied Powers (England, France, and Russia)",
+          "To oppose the Axis Powers (Germany, Italy, and Japan)"
         ],
         "wikiLink": ""
       },
@@ -975,16 +1185,21 @@
         "text": "Dwight Eisenhower is famous for many things. Name one.",
         "type": "standard",
         "answers": [
-          "General during World War II"
+          "General during World War II",
+          "President at the end of (during) the Korean War",
+          "34th president of the United States",
+          "Signed the Federal-Aid Highway Act of 1956 (Created the Interstate System)"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/Dwight_D._Eisenhower"
       },
       {
         "id": "history_108",
-        "text": "Who was the United States\u2019 main rival during the Cold War?",
+        "text": "Who was the United States' main rival during the Cold War?",
         "type": "standard",
         "answers": [
-          "Soviet Union"
+          "Soviet Union",
+          "USSR",
+          "Russia"
         ],
         "wikiLink": "https://en.wikipedia.org/wiki/Cold_War"
       },
@@ -993,7 +1208,8 @@
         "text": "During the Cold War, what was one main concern of the United States?",
         "type": "standard",
         "answers": [
-          "Communism"
+          "Communism",
+          "Nuclear war"
         ],
         "wikiLink": "https://en.wikipedia.org/wiki/Cold_War"
       },
@@ -1004,7 +1220,7 @@
         "answers": [
           "To stop the spread of communism"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/Korean_War"
       },
       {
         "id": "history_111",
@@ -1013,7 +1229,7 @@
         "answers": [
           "To stop the spread of communism"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/Vietnam_War"
       },
       {
         "id": "history_112",
@@ -1022,16 +1238,18 @@
         "answers": [
           "Fought to end racial discrimination"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/Civil_rights_movement"
       },
       {
         "id": "history_113",
         "text": "Martin Luther King, Jr. is famous for many things. Name one.",
         "type": "standard",
         "answers": [
-          "Fought for civil rights"
+          "Fought for civil rights",
+          "Worked for equality for all Americans",
+          "Worked to ensure that people would “not be judged by the color of their skin, but by the content of their character"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/Martin_Luther_King_Jr."
       },
       {
         "id": "history_114",
@@ -1040,32 +1258,52 @@
         "answers": [
           "To force the Iraqi military from Kuwait"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/Gulf_War"
       },
       {
         "id": "history_115",
         "text": "What major event happened on September 11, 2001 in the United States?",
         "type": "standard",
         "answers": [
-          "Terrorists attacked the United States"
+          "Terrorists attacked the United States",
+          "Terrorists took over two planes and crashed them into the World Trade Center in New York City",
+          "Terrorists took over a plane and crashed into the Pentagon in Arlington, Virginia",
+          "Terrorists took over a plane originally aimed at Washington, D.C., and crashed in a field in Pennsylvania"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/September_11_attacks"
       },
       {
         "id": "history_116",
         "text": "Name one U.S. military conflict after the September 11, 2001 attacks.",
         "type": "standard",
         "answers": [
-          "(Global) War on Terror"
+          "(Global) War on Terror",
+          "War in Afghanistan",
+          "War in Iraq"
         ],
-        "wikiLink": ""
+        "wikiLink": "https://en.wikipedia.org/wiki/War_on_terror"
       },
       {
         "id": "history_117",
         "text": "Name one American Indian tribe in the United States.",
         "type": "standard",
         "answers": [
-          "Apache"
+          "Apache",
+          "Blackfeet",
+          "Cayuga",
+          "Cherokee",
+          "Cheyenne",
+          "Chippewa",
+          "Choctaw",
+          "Creek",
+          "Crow",
+          "Hopi",
+          "Huron",
+          "Inupiat",
+          "Lakota",
+          "Mohawk",
+          "Mohegan",
+          "Navajo"
         ],
         "wikiLink": ""
       },
@@ -1074,7 +1312,13 @@
         "text": "Name one example of an American innovation.",
         "type": "standard",
         "answers": [
-          "Light bulb"
+          "Light bulb",
+          "Automobile (cars, internal combustion engine)",
+          "Skyscrapers",
+          "Airplane",
+          "Assembly line",
+          "Landing on the moon",
+          "Integrated circuit (IC)"
         ],
         "wikiLink": ""
       }
@@ -1099,7 +1343,11 @@
         "text": "Where is the Statue of Liberty?",
         "type": "standard",
         "answers": [
-          "New York (Harbor)"
+          "New York (Harbor)",
+          "Liberty Island",
+          "New Jersey",
+          "Near New York City",
+          "On the Hudson (River)"
         ],
         "wikiLink": "https://en.wikipedia.org/wiki/Statue_of_Liberty"
       },
@@ -1108,7 +1356,8 @@
         "text": "Why does the flag have 13 stripes?",
         "type": "standard",
         "answers": [
-          "(Because there were) 13 original colonies"
+          "(Because there were) 13 original colonies",
+          "(Because the stripes) represent the original colonies"
         ],
         "wikiLink": ""
       },
@@ -1117,7 +1366,9 @@
         "text": "Why does the flag have 50 stars?",
         "type": "standard",
         "answers": [
-          "(Because there is) one star for each state"
+          "(Because there is) one star for each state",
+          "(Because) each star represents a state",
+          "(Because there are) 50 states"
         ],
         "wikiLink": ""
       },
@@ -1132,10 +1383,11 @@
       },
       {
         "id": "symbols_124",
-        "text": "The Nation\u2019s first motto was \u201cE Pluribus Unum.\u201d What does that mean?",
+        "text": "The Nation's first motto was \u201cE Pluribus Unum.\u201d What does that mean?",
         "type": "standard",
         "answers": [
-          "Out of many, one"
+          "Out of many, one",
+          "We all become one"
         ],
         "wikiLink": ""
       },
@@ -1144,7 +1396,8 @@
         "text": "What is Independence Day?",
         "type": "standard",
         "answers": [
-          "A holiday to celebrate U.S. independence (from Britain)"
+          "A holiday to celebrate U.S. independence (from Britain)",
+          "The country’s birthday"
         ],
         "wikiLink": ""
       },
@@ -1153,7 +1406,17 @@
         "text": "Name three national U.S. holidays.",
         "type": "standard",
         "answers": [
-          "New Year\u2019s Day"
+          "New Year's Day",
+          "Martin Luther King, Jr. Day",
+          "Presidents Day (Washington's Birthday)",
+          "Memorial Day",
+          "Juneteenth",
+          "Independence Day",
+          "Labor Day",
+          "Columbus Day",
+          "Veterans Day",
+          "Thanksgiving Day",
+          "Christmas Day"
         ],
         "wikiLink": ""
       },
@@ -1171,7 +1434,8 @@
         "text": "What is Veterans Day?",
         "type": "standard",
         "answers": [
-          "A holiday to honor people in the (U.S.) military"
+          "A holiday to honor people in the (U.S.) military",
+          "A holiday to honor people who have served (in the U.S. military)"
         ],
         "wikiLink": ""
       }
