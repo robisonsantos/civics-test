@@ -6,6 +6,7 @@
   import { fade, slide } from 'svelte/transition';
 
   import { onMount } from 'svelte';
+  import { ArrowLeft } from '@lucide/svelte';
 
   // State for the current session
   let queue = $state<string[]>([]);
@@ -65,6 +66,15 @@
 </script>
 
 <div class="min-h-screen bg-slate-50 py-12 px-4 flex flex-col items-center justify-center">
+  <div class="w-full max-w-2xl mb-6">
+    <a
+      href="/dashboard"
+      class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-slate-500 hover:text-slate-700 hover:bg-slate-100 transition-colors font-medium"
+    >
+      <ArrowLeft size={18} />
+      Dashboard
+    </a>
+  </div>
   {#if !module}
     <div class="text-center p-8 bg-white rounded-3xl shadow-sm border border-slate-200">
       <h1 class="text-2xl font-bold text-slate-800">Module Not Found</h1>
