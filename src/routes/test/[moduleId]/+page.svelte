@@ -2,7 +2,6 @@
   import { page } from '$app/state';
   import { getModuleById } from '$lib/data';
   import { CONFIG } from '$lib/data';
-  import { fade } from 'svelte/transition';
   import { CheckCircle, XCircle, AlertCircle, ArrowLeft, Trophy } from '@lucide/svelte';
 
   const moduleId = page.params.moduleId;

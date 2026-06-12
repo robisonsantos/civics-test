@@ -6,7 +6,7 @@
   import { fade, slide } from 'svelte/transition';
 
   import { onMount } from 'svelte';
-  import { ArrowLeft, CheckCircle } from '@lucide/svelte';
+  import { ArrowLeft, CheckCircle, ClipboardCheck } from '@lucide/svelte';
 
   // State for the current session
   let queue = $state<string[]>([]);
@@ -132,13 +132,22 @@
           </div>
           <h2 class="text-2xl font-serif font-bold text-slate-800 mb-3">Module Complete!</h2>
           <p class="text-slate-500 mb-8">You've finished all questions in this module.</p>
-          <a
-            href="/dashboard"
-            class="inline-flex items-center gap-2 px-8 py-3 bg-emerald-600 text-white rounded-2xl font-bold hover:bg-emerald-700 transition-colors"
-          >
-            Return to Dashboard
-            <ArrowLeft size={20} />
-          </a>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="/test/{moduleId}"
+              class="inline-flex items-center gap-2 px-8 py-3 bg-emerald-600 text-white rounded-2xl font-bold hover:bg-emerald-700 transition-colors"
+            >
+              <ClipboardCheck size={20} />
+              Take Module Test
+            </a>
+            <a
+              href="/dashboard"
+              class="inline-flex items-center gap-2 px-8 py-3 bg-white border border-slate-200 text-slate-600 rounded-2xl font-bold hover:bg-slate-50 transition-colors"
+            >
+              Return to Dashboard
+              <ArrowLeft size={20} />
+            </a>
+          </div>
         </div>
       {/if}
     </div>
