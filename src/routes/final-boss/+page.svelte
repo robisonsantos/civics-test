@@ -3,7 +3,7 @@
     import { modules, CONFIG } from "$lib/data";
     import { onMount } from "svelte";
 
-    import { Trophy, Lock, CheckCircle, XCircle, Eye, EyeOff } from "@lucide/svelte";
+    import { Trophy, Lock, CheckCircle, XCircle, Eye, EyeOff, ArrowLeft } from "@lucide/svelte";
     import { goto } from "$app/navigation";
 
     let allMastered = $state(false);
@@ -68,6 +68,15 @@
 <div
     class="min-h-screen bg-slate-900 py-12 px-4 flex flex-col items-center justify-center text-white"
 >
+    <div class="w-full max-w-2xl mb-6">
+        <a
+            href="/dashboard"
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-slate-400 hover:text-slate-200 hover:bg-slate-800 transition-colors font-medium"
+        >
+            <ArrowLeft size={18} />
+            Dashboard
+        </a>
+    </div>
     {#if !allMastered}
         <div
             class="max-w-md w-full bg-slate-800 border border-slate-700 p-12 rounded-3xl text-center shadow-2xl"
