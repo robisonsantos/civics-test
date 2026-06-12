@@ -74,8 +74,7 @@
       <!-- Action Buttons -->
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <!-- Go Deeper (only for standard) -->
-        {#if question.type === 'standard'}
-          {#if showAnswer}
+        {#if showAnswer && question.type === 'standard'}
           <button
             onclick={() => onGoDeeper(question.wikiLink || '')}
             class="flex items-center justify-center gap-2 py-3 px-4 rounded-2xl text-slate-500 hover:text-slate-700 hover:bg-slate-50 transition-colors text-sm font-medium"
@@ -83,7 +82,6 @@
             <ExternalLink size={16} />
             Go Deeper
           </button>
-          {/if}
         {:else}
           <div class="hidden sm:block"></div>
         {/if}

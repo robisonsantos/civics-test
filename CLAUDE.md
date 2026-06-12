@@ -30,3 +30,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `src/lib/state.ts`: Business logic for mastery and streaks.
 - `src/routes/`: SvelteKit pages (Dashboard, Study, Test, and Final Boss).
 - `data/`: Raw source data and parsing scripts.
+
+## AI Editing Guidelines
+- When using the Edit tool, always select the smallest possible unique string to ensure an exact match. If a change involves multiple lines, break it into several separate Edit calls rather than one large multi-line replacement.
+- Always perform a fresh Read of the file immediately before performing complex edits to ensure the local buffer is perfectly in sync with the current state.

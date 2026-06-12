@@ -18,6 +18,10 @@
   const moduleId = page.params.moduleId;
   const module = moduleId ? getModuleById(moduleId) : undefined;
 
+  let currentQuestion = $derived(
+    queue[0] && module ? module.questions.find(q => q.id === queue[0]) : undefined
+  );
+
   function shuffle<T>(array: T[]): T[] {
     return [...array].sort(() => Math.random() - 0.5);
   }
@@ -90,17 +94,19 @@
 
       <!-- Active Question Card -->
       <div class="relative">
-        {#key queue[0]}
-          <div in:fade={{duration: 200}} class="transition-all">
-            <QuestionCard
-              question={module?.questions.find(q => q.id === queue[0])}
-              streak={streak}
-              onNext={handleNext}
-              onGoDeeper={handleGoDeeper}
-              onAnswer={handleAnswer}
-            />
-          </div>
-        {/key}
+          {#key queue[0]}
+            <div in:fade={{duration: 200}} class="transition-all">
+              {#if currentQuestion}
+                <QuestionCard
+                  question={currentQuestion}
+                  streak={streak}
+                  onNext={handleNext}
+                  onGoDeeper={handleGoDeeper}
+                  onAnswer={handleAnswer}
+                />
+              {/if}
+            </div>
+          {/key}
       </div>
     </div>
   {/if}
@@ -109,21 +115,28 @@
 {#if showModal}
   <div
     class="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-slate-900/40 backdrop-blur-sm"
-    role="dialog"
-    aria-modal="true"
-    onclick={() => showModal = false}
+    role="presentation"
     onkeydown={(e) => e.key === 'Escape' && (showModal = false)}
+    onclick={() => showModal = false}
   >
     <div
       class="bg-white w-full max-w-2xl h-[80vh] sm:h-auto sm:max-h-[80vh] rounded-t-3xl sm:rounded-3xl shadow-2xl overflow-hidden flex flex-col animate-in slide-in-from-bottom duration-300"
       onclick={(e) => e.stopPropagation()}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+      tabindex="-1"
     >
       <div class="p-4 border-b border-slate-100 flex justify-between items-center bg-slate-50">
-        <h3 class="font-bold text-slate-800 flex items-center gap-2">
+        <h3 id="modal-title" class="font-bold text-slate-800 flex items-center gap-2">
           <ExternalLink size={16} />
           Deep Dive
         </h3>
-        <button onclick={() => showModal = false} class="p-2 hover:bg-slate-200 rounded-full transition-colors">
+        <button
+          onclick={() => showModal = false}
+          class="p-2 hover:bg-slate-200 rounded-full transition-colors"
+          aria-label="Close modal"
+        >
           <span class="text-2xl leading-none">&times;</span>
         </button>
       </div>

@@ -1,6 +1,7 @@
 <script lang="ts">
   import { page } from '$app/state';
   import { getModuleById } from '$lib/data';
+  import { CONFIG } from '$lib/data';
   import { fade } from 'svelte/transition';
   import { CheckCircle, XCircle, AlertCircle, ArrowLeft, Trophy } from '@lucide/svelte';
 
@@ -26,8 +27,7 @@
     }
   }
 
-  const passRate = 0.6; // 60% requirement
-  const passed = score / module!.questions.length >= passRate;
+  const passed = $derived(score / module!.questions.length >= CONFIG.MIN_PASS_RATE);
 </script>
 
 <div class="min-h-screen bg-slate-50 py-12 px-4 flex flex-col items-center justify-center">

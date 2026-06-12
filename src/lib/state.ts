@@ -1,4 +1,4 @@
-import { db, updateProgress } from './db';
+import { db, getProgress, updateProgress } from './db';
 import { getQuestionById } from './data';
 
 /**
@@ -19,9 +19,8 @@ export async function processAnswer(questionId: string, isCorrect: boolean) {
   }
 
   // Standard progression logic
-  // Note: To maintain streak across a session in a real app,
-  // we would pass the current_streak as part of state or use a context manager.
-  let streak = 0; // Currently mocked for simple implementation
+  const progress = await getProgress(questionId);
+  let streak = progress.streak ?? 0;
 
   if (isCorrect) {
     streak += 1;
@@ -32,7 +31,9 @@ export async function processAnswer(questionId: string, isCorrect: boolean) {
   let isMastered = false;
   if (streak >= 3) {
     isMastered = true;
-    await updateProgress(questionId, { masteredCount: 1 });
+    await updateProgress(questionId, { masteredCount: 1, streak });
+  } else {
+    await updateProgress(questionId, { streak });
   }
 
   return { isMastered, streak };
