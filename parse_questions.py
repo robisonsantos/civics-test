@@ -6,9 +6,7 @@ def parse_raw_data(file_path):
         lines = f.readlines()
 
     questions = []
-    current_section = "government" # Default to the first section
-    
-    # Determine which sections we are looking for
+    current_section = "government"
     section_map = {
         "AMERICAN GOVERNMENT": "government",
         "RIGHTS AND RESPONSIBILITIES": "rights",
@@ -23,23 +21,23 @@ def parse_raw_data(file_path):
         if not line:
             continue
         
-        # Update section if a header is found
+        # Section Header detection
         for name, key in section_map.items():
             if name in line:
                 current_section = key
                 break
 
+        # Question detection: "1. What is..."
         match_q = re.match(r'^(\d+)\.\s+(.*)', line)
         if match_q:
-            # If there's a pending item from the previous question, add it to our list
             if current_item:
                 questions.append(current_item)
             
             num = int(match_q.group(1))
             text = match_q.group(2).strip()
             
-            # Identification of "personal info" types (questions where answer varies)
-            is_personal = any(x in text.lower() for x in ["vary", "your state", "your district"])
+            # Determine type: personal_info if it mentions "your state", "your representative", etc.
+            is_personal = any(x in text.lower() for x in ["your state", "your representative", "your district", "answers will vary"])
             
             current_item = {
                 "id": f"{current_section}_{num}",
@@ -48,17 +46,19 @@ def parse_raw_data(file_path):
                 "answer": "",
                 "wikiLink": ""
             }
+            continue
 
-            # If it's a standard question, try to find an answer. 
-            # Many questions have multiple answers; we'll just grab the first one found in subsequent lines.
-            if current_item["type"] == "standard":
-                pass # We will handle this differently if needed or just accept it for now
+        # Answer detection: lines starting with bullet points
+        if line.startswith('•') and current_item:
+            answer_text = line.lstrip('•').strip()
+            # Only store the first answer if empty (simplification for the app)
+            if not current_item["answer"]:
+                current_item["answer"] = answer_text
 
-    # Add the very last item that was being processed at the end of the file
     if current_item:
         questions.append(current_item)
 
-    # Cleanup and structure into segments
+    # Structuring the final output
     structured_data = {
         "government": {"id": "government", "title": "Government", "questions": [], "masteredCount": 0},
         "rights": {"id": "rights", "title": "Rights & Responsibilities", "questions": [], "masteredCount": 0},
@@ -66,13 +66,27 @@ def parse_raw_data(file_path):
         "symbols": {"id": "symbols", "title": "Symbols & Holidays", "questions": [], "masteredCount": 0}
     }
 
+    # Simple Wikipedia link mapping for common key terms
+    wiki_keywords = {
+        "Constitution": "https://en.wikipedia.org/wiki/Constitution_of_the_United_States",
+        "Declaration of Independence": "https://en.wikipedia.org/wiki/United_States_Declaration_of_Independence",
+        "Bill of Rights": "https://en.wikipedia.org/wiki/United_States_Bill_of_Rights",
+        "Capitalism": "https://en.wikipedia.org/wiki/Capitalism",
+        "Electoral College": "https://en.wikipedia.org/wiki/United_States_Electoral_College",
+        "Supreme Court": "https://en.wikipedia.org/wiki/Supreme_Court_of_the_United_States",
+        "Civil War": "https://en.wikipedia.org/wiki/American_Civil_War",
+        "Cold War": "https://en.wikipedia.org/wiki/Cold_War",
+        "Statue of Liberty": "https://en.wikipedia.org/wiki/Statue_of_Liberty",
+    }
+
     for q in questions:
         sec_key = q["id"].split('_')[0]
         if sec_key in structured_data:
-            # Update the answer if it was a standard question and we can find something simple
-            # However, looking at our raw data, many "standard" questions have specific primary answers.
-            # Since our parser's logic for "answer" update might be tricky with multi-line blocks without 10 more lines of code,
-            # let's just ensure the structure is valid first.
+            # Auto-generate wiki link if keyword matches
+            for keyword, url in wiki_keywords.items():
+                if keyword.lower() in q["text"].lower():
+                    q["wikiLink"] = url
+                    break
             structured_data[sec_key]["questions"].append(q)
 
     return structured_data
@@ -81,4 +95,4 @@ if __name__ == "__main__":
     result = parse_raw_data('data/raw_questions.txt')
     with open('src/lib/content.json', 'w', encoding='utf-8') as f:
         json.dump(result, f, indent=2)
-    print("Successfully exported 128 questions to src/lib/content.json")
+    print("Successfully exported 128 questions WITH answers to src/lib/content.json")

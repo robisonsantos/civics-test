@@ -4,7 +4,7 @@ export interface Question {
   id: string;
   text: string;
   type: QuestionType;
-  answer?: string; // For standard questions
+  answers: string[]; // Changed from answer?: string
   wikiLink?: string; // Link for "Go Deeper"
 }
 

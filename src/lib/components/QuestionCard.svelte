@@ -1,6 +1,7 @@
 <script lang="ts">
   import { Flame, ArrowRight, ExternalLink, Eye, EyeOff } from '@lucide/svelte';
   import type { Question } from '../types';
+  import { processAnswer } from '../state';
 
   interface Props {
     question: Question;
@@ -12,10 +13,13 @@
   let { question, streak, onNext, onGoDeeper }: Props = $props();
 
   let showAnswer = $state(false);
+  let userEntry = $state('');
+  let isVerified = $state(false);
 
   function toggleAnswer() {
     showAnswer = !showAnswer;
   }
+
 </script>
 
 <div class="relative max-w-lg mx-auto w-full p-4 sm:p-6">
@@ -53,14 +57,14 @@
             <span>Hide Answer</span>
           {:else}
             <Eye size={18} />
-            <span>Show Answer</span>
+            <span>Check Answer</span>
           {/if}
         </button>
 
         {#if showAnswer}
           <div class="mt-4 p-4 rounded-2xl bg-emerald-50 border border-emerald-100 text-emerald-900 animate-in fade-in slide-in-from-top-2 duration-300">
             <p class="text-lg font-medium text-center leading-relaxed">
-              {question.answer || 'No answer provided (Personal Info)'}
+              {question.answers && question.answers.length > 0 ? question.answers.join(', ') : 'No answer provided (Personal Info)'}
             </p>
           </div>
         {/if}
@@ -70,6 +74,7 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <!-- Go Deeper (only for standard) -->
         {#if question.type === 'standard'}
+          {#if showAnswer}
           <button
             onclick={() => onGoDeeper(question.wikiLink || '')}
             class="flex items-center justify-center gap-2 py-3 px-4 rounded-2xl text-slate-500 hover:text-slate-700 hover:bg-slate-50 transition-colors text-sm font-medium"
@@ -77,9 +82,26 @@
             <ExternalLink size={16} />
             Go Deeper
           </button>
+          {/if}
         {:else}
-          <!-- Spacer for alignment if personal_info -->
           <div class="hidden sm:block"></div>
+        {/if}
+
+        {#if showAnswer}
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full">
+          <button
+            onclick={() => processAnswer(question.id, true)}
+            class="flex items-center justify-center py-3 px-4 rounded-2xl bg-emerald-600 text-white hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-900/20 font-semibold"
+          >
+            I got it right
+          </button>
+          <button
+            onclick={() => processAnswer(question.id, false)}
+            class="flex items-center justify-center py-3 px-4 rounded-2xl bg-red-600 text-white hover:bg-red-700 transition-all shadow-lg shadow-red-900/20 font-semibold"
+          >
+            I got it wrong
+          </button>
+        </div>
         {/if}
 
         <!-- Next Button -->
