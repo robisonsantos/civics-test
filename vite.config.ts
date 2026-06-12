@@ -20,23 +20,33 @@ export default defineConfig({
 		}),
 		VitePWA({
 			registerType: 'autoUpdate',
+			includeAssets: ['favicon.svg'],
 			manifest: {
 				name: 'Civics Test Prep',
 				short_name: 'CivicsPrep',
 				description: 'Master the 2025 US Naturalization Civics Test.',
-				theme_color: '#ffffff',
+				theme_color: '#10b981',
+				background_color: '#ffffff',
+				display: 'standalone',
+				orientation: 'portrait-primary',
+				scope: '/',
+				start_url: '/',
 				icons: [
 					{
 						src: 'icons/192x192.png',
 						sizes: '192x192',
-						type: 'image/png'
+						type: 'image/png',
+						purpose: 'any maskable'
 					},
 					{
 						src: 'icons/512x512.png',
 						sizes: '512x512',
-						type: 'image/png'
+						type: 'image/png',
+						purpose: 'any maskable'
 					}
-				]
+				],
+				screenshots: [],
+				categories: ['education', 'utilities']
 			}
 		})
 	]
