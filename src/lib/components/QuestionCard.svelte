@@ -8,9 +8,10 @@
     streak: number;
     onNext: () => void;
     onGoDeeper: (url: string) => void;
+    onAnswer: (isCorrect: boolean) => void;
   }
 
-  let { question, streak, onNext, onGoDeeper }: Props = $props();
+  let { question, streak, onNext, onGoDeeper, onAnswer }: Props = $props();
 
   let showAnswer = $state(false);
   let userEntry = $state('');
@@ -90,13 +91,13 @@
         {#if showAnswer}
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full">
           <button
-            onclick={() => processAnswer(question.id, true)}
+            onclick={() => onAnswer(true)}
             class="flex items-center justify-center py-3 px-4 rounded-2xl bg-emerald-600 text-white hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-900/20 font-semibold"
           >
             I got it right
           </button>
           <button
-            onclick={() => processAnswer(question.id, false)}
+            onclick={() => onAnswer(false)}
             class="flex items-center justify-center py-3 px-4 rounded-2xl bg-red-600 text-white hover:bg-red-700 transition-all shadow-lg shadow-red-900/20 font-semibold"
           >
             I got it wrong

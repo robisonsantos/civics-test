@@ -5,9 +5,11 @@
   import QuestionCard from '$lib/components/QuestionCard.svelte';
   import { fade, slide } from 'svelte/transition';
   import { ExternalLink } from '@lucide/svelte';
+  import { onMount } from 'svelte';
 
   // State for the current session
-  let currentIdx = $state(0);
+  let queue = $state<string[]>([]);
+  let initialCount = $state(0);
   let streak = $state(0);
   let showModal = $state(false);
   let modalUrl = $state('');
@@ -16,17 +18,42 @@
   const moduleId = page.params.moduleId;
   const module = moduleId ? getModuleById(moduleId) : undefined;
 
+  function shuffle<T>(array: T[]): T[] {
+    return [...array].sort(() => Math.random() - 0.5);
+  }
+
+  function initQueue() {
+    if (module) {
+      initialCount = module.questions.length;
+      const shuffledIds = shuffle(module.questions.map(q => q.id));
+      queue = shuffledIds;
+    }
+  }
+
+  onMount(() => {
+    initQueue();
+  });
+
   function handleNext() {
-    if (module && currentIdx < module.questions.length - 1) {
-      currentIdx++;
+    if (queue.length > 1) {
+      queue.shift();
     } else {
       alert('You have completed this module!');
     }
   }
 
-  async function handleAnswer(questionId: string, isCorrect: boolean) {
-    const result = await processAnswer(questionId, isCorrect);
+  async function handleAnswer(isCorrect: boolean) {
+    const currentQuestionId = queue[0];
+    if (!currentQuestionId) return;
+
+    const result = await processAnswer(currentQuestionId, isCorrect);
     streak = result.streak ?? streak;
+
+    if (!isCorrect && !result.isMastered) {
+      // Add back to end of queue if wrong and not mastered
+      const id = queue.shift();
+      if (id) queue.push(id);
+    }
   }
 
   function handleGoDeeper(url: string) {
@@ -48,14 +75,14 @@
       <div class="mb-6 px-4 flex justify-between items-end">
         <div>
           <h1 class="text-2xl font-serif font-bold text-slate-800">{module.title}</h1>
-          <p class="text-slate-500 text-sm">Question {currentIdx + 1} of {module.questions.length}</p>
+          <p class="text-slate-500 text-sm">Question {module.questions.length - queue.length + 1} of {initialCount}</p>
         </div>
         <div class="text-right">
           <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Module Progress</span>
           <div class="w-32 h-2 bg-slate-200 rounded-full overflow-hidden">
             <div
               class="h-full bg-emerald-500 transition-all duration-500"
-              style="width: {((currentIdx + 1) / module.questions.length) * 100}%"
+              style="width: {((initialCount - queue.length) / initialCount) * 100}%"
             ></div>
           </div>
         </div>
@@ -63,13 +90,14 @@
 
       <!-- Active Question Card -->
       <div class="relative">
-        {#key currentIdx}
+        {#key queue[0]}
           <div in:fade={{duration: 200}} class="transition-all">
             <QuestionCard
-              question={module.questions[currentIdx]}
+              question={module?.questions.find(q => q.id === queue[0])}
               streak={streak}
               onNext={handleNext}
               onGoDeeper={handleGoDeeper}
+              onAnswer={handleAnswer}
             />
           </div>
         {/key}
